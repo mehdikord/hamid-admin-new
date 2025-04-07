@@ -72,7 +72,7 @@ export default {
     <tbody>
     <template v-if="loading">
       <tr>
-        <td colspan="4">
+        <td :colspan="columns.length">
           <div class="text-center p-5">
             <img src="@/assets/images/icons/infinite-spinner.svg" width="100" alt="">
             <div class="mt-3"><strong>درحال دریافت اطلاعات</strong> </div>
