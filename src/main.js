@@ -13,8 +13,6 @@ import settingPage from "./components/settingPage.vue"
 import DropZone from "dropzone-vue";
 // import 'bootstrap/dist/js/bootstrap.bundle'
 
-import PerfectScrollbar from 'vue3-perfect-scrollbar'
-import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css'
 import Toaster from "@meforma/vue-toaster";
 import 'vue3-tour/dist/vue3-tour.css'
 import VueSweetalert2 from 'vue-sweetalert2';
@@ -97,7 +95,6 @@ app.use(VueAnimateOnScroll)
 app.use(Vue3Toasity)
 app.use(Toaster)
 app.use(router)
-app.use(PerfectScrollbar)
 app.use(DropZone)
 
 //Use Mixins
