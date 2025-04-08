@@ -1,16 +1,16 @@
 <script>
 import { Modal } from 'bootstrap';
-import Projects_Categories_Create from "@/pages/projects/categories/Projects_Categories_Create.vue";
-import Projects_Categories_Edit from "@/pages/projects/categories/Projects_Categories_Edit.vue";
-import {Stores_Project_Categories} from "@/store/pinia/projects/project_categories";
+import Projects_Statuses_Create from "@/pages/projects/statuses/Projects_Statuses_Create.vue";
+import Projects_Statuses_Edit from "@/pages/projects/statuses/Projects_Statuses_Edit.vue";
+import {Stores_Project_Statuses} from "@/store/pinia/projects/project_statuses";
 export default {
-  name: "Projects_Categories_Index",
+  name: "Projects_Statuses_Index",
   mounted(){
       this.Get_Items();
   },
   components:{
-    'projects_categories_create' : Projects_Categories_Create,
-    'projects_categories_edit' : Projects_Categories_Edit,
+    'projects_statuses_create' : Projects_Statuses_Create,
+    'projects_statuses_edit' : Projects_Statuses_Edit,
   },
   data() {
     return {
@@ -40,7 +40,7 @@ export default {
         },
         {
           field : 'name',
-          title : 'عنوان دسته بندی'
+          title : 'عنوان وضعیت'
         },
         {
             field : 'color',
@@ -63,7 +63,7 @@ export default {
   methods: {
     Get_Items(){
       this.loading=true;
-      Stores_Project_Categories().Index(this.query_params).then(res => {
+      Stores_Project_Statuses().Index(this.query_params).then(res => {
         this.items = res.data.result.data
         if (res.data.result){
           this.pagination.current = res.data.result.current_page;
@@ -109,7 +109,7 @@ export default {
     },
     Delete_Item(id){
       this.loading_delete[id] = true;
-      Stores_Project_Categories().Delete(id).then(res => {
+      Stores_Project_Statuses().Delete(id).then(res => {
         this.items = this.items.filter(item => item.id !== id);
         this.Helpers_Notify_Deleted();
         this.loading_delete[id] = false;
@@ -129,7 +129,7 @@ export default {
         <button data-bs-toggle="modal" data-bs-target="#add_item" class="btn btn-primary float-end "><i class="fa-duotone fa-plus fa-regular"></i> آیتم جدید</button>
         <div class="modal fade" id="add_item" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog" role="document">
-            <projects_categories_create @Created="(item) => Add_Item(item)"></projects_categories_create>
+            <projects_statuses_create @Created="(item) => Add_Item(item)"></projects_statuses_create>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@ export default {
             <action_delete :loading="loading_delete[props.row.id]" @Deleted="Delete_Item(props.row.id)"></action_delete>
             <div class="modal fade" :id="'edit_item'+props.row.id" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog" role="document">
-                <projects_categories_edit :data="props.row" @Updated="(item) => Update_Item(item)"></projects_categories_edit>
+                <projects_statuses_edit :data="props.row" @Updated="(item) => Update_Item(item)"></projects_statuses_edit>
               </div>
             </div>
           </template>

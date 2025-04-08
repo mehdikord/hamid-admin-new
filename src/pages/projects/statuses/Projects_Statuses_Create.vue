@@ -1,8 +1,8 @@
 <script>
-import {Stores_Project_Categories} from "@/store/pinia/projects/project_categories";
+import {Stores_Project_Statuses} from "@/store/pinia/projects/project_statuses";
 
 export default {
-  name: "Projects_Categories_Create",
+  name: "Projects_Statuses_Create",
   data(){
     return {
       items:{
@@ -18,7 +18,7 @@ export default {
     Create_Item(){
 
       this.loading=true;
-      Stores_Project_Categories().Create(this.items).then(res => {
+      Stores_Project_Statuses().Create(this.items).then(res => {
         this.$emit('Created',res.data.result);
         this.loading=false;
       }).catch(error => {
@@ -44,7 +44,7 @@ export default {
     <div class="modal-body">
 
       <div class="mb-2">
-        <label class="col-form-label">عنوان دسته بندی</label>
+        <label class="col-form-label">عنوان وضعیت</label>
         <input v-model="items.name" class="form-control" :class="{'is-invalid' : this.Helpers_Validation_Check(errors,'name')}"  type="text" />
         <validation_errors :errors="this.Helpers_Validation_Errors(errors,'name')"></validation_errors>
       </div>

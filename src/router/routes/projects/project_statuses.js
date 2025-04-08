@@ -1,16 +1,16 @@
-import Default from "@/pages/dashboard/default.vue";
-import Users_Users_Index from "@/pages/users/users/Users_Users_Index.vue";
+import Projects_Statuses_Index from "@/pages/projects/statuses/Projects_Statuses_Index.vue";
 
-const Users = [
+
+const Projects_Statuses = [
     {
         path: '/projects/statuses',
         name: 'projects_statuses',
-        component: Users_Users_Index,
+        component: Projects_Statuses_Index,
         meta: {
-            title: 'کابران سیستم',
-            subtitle : 'کارشناسان'
+            title: 'پروژه ها',
+            subtitle : 'وضعیت ها'
         }
     },
 ]
 
-export default Users
+export default Projects_Statuses

@@ -1,7 +1,7 @@
 <template>
   <li v-if="user" class="profile-nav onhover-dropdown pe-0 py-0">
     <div class="media profile-media">
-
+      <i class="fa-duotone fa-user-tie f-26 mt-1 text-danger"></i>
       <div class="media-body">
         <span>{{ user.name }}</span>
         <p class="mb-0 font-roboto">

@@ -48,17 +48,45 @@ export var menuItems={
     },
     {
       "title": "مدیریت پروژه ها",
-      "icon": "fa-duotone fa-sitemap",
+      "icon": "fa-duotone fa-boxes",
       "iconf":"fill-home",
       "type": "sub",
       "active": false,
       "children": [
         {
-          "path": "/projects",
-          "title": "پروژه ها",
+          "path": "/projects/create",
+          "title": "ایجاد پروژه جدید",
           "type": "link",
           "active":false
         },
+        {
+          "path": "/projects",
+          "title": "لیست پروژه ها",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/projects/searching",
+          "title": "جستجتو پیشترفته",
+          "type": "link",
+          "active":false
+        },
+        {
+          "path": "/projects/reporting",
+          "title": "گزارش گیری",
+          "type": "link",
+          "active":false
+        },
+
+      ]
+    },
+    {
+      "title": "تنظیمات پروژه ها",
+      "icon": "fa-duotone fa-cog fa-spin",
+      "iconf":"fill-home",
+      "type": "sub",
+      "active": false,
+      "children": [
         {
           "path": "/projects/categories",
           "title": "دسته بندی ها",

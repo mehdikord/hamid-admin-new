@@ -1,6 +1,6 @@
 import Projects_Categories_Index from "@/pages/projects/categories/Projects_Categories_Index.vue";
 
-const Users = [
+const Projects_Categories = [
     {
         path: '/projects/categories',
         name: 'projects_categories',
@@ -12,4 +12,4 @@ const Users = [
     },
 ]
 
-export default Users
+export default Projects_Categories

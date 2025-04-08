@@ -1,16 +1,26 @@
-import Default from "@/pages/dashboard/default.vue";
-import Users_Users_Index from "@/pages/users/users/Users_Users_Index.vue";
+import Projects_Index from "@/pages/projects/projects/Projects_Index.vue";
+import Projects_Create from "@/pages/projects/projects/Projects_Create.vue";
 
-const Users = [
+
+const Projects = [
     {
-        path: '/users/users',
-        name: 'users_users',
-        component: Users_Users_Index,
+        path: '/projects',
+        name: 'projects',
+        component: Projects_Index,
         meta: {
-            title: 'کابران سیستم',
-            subtitle : 'کارشناسان'
+            title: 'پروژه ها',
+            subtitle : 'لیست پروژه ها'
+        }
+    },
+    {
+        path: '/projects/create',
+        name: 'projects_create',
+        component: Projects_Create,
+        meta: {
+            title: 'پروژه ها',
+            subtitle : 'ایجاد پروژه جدید'
         }
     },
 ]
 
-export default Users
+export default Projects

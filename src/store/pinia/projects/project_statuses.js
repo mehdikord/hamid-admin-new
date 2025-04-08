@@ -4,7 +4,7 @@ export const Stores_Project_Statuses = defineStore('project_statuses',{
     actions : {
         Index(params){
             return new Promise((resolve, reject) => {
-                axios.get('admins/projects/statuses',{params : params}).then(response =>{
+                this.$axios.get('admins/projects/statuses',{params : params}).then(response =>{
                     return resolve(response);
                 }).catch(error =>{
                     return reject(error);
@@ -13,7 +13,7 @@ export const Stores_Project_Statuses = defineStore('project_statuses',{
         },
         All(){
             return new Promise((resolve, reject) => {
-                axios.get('admins/projects/statuses/all').then(response =>{
+                this.$axios.get('admins/projects/statuses/all').then(response =>{
                     return resolve(response);
                 }).catch(error =>{
                     return reject(error);
@@ -22,7 +22,7 @@ export const Stores_Project_Statuses = defineStore('project_statuses',{
         },
         Create(params){
             return new Promise((resolve, reject) => {
-                axios.post('admins/projects/statuses',params).then(response =>{
+                this.$axios.post('admins/projects/statuses',params).then(response =>{
                     return resolve(response);
                 }).catch(error =>{
                     return reject(error);
@@ -31,7 +31,7 @@ export const Stores_Project_Statuses = defineStore('project_statuses',{
         },
         Show(id){
             return new Promise((resolve, reject) => {
-                axios.get('admins/projects/statuses/'+id).then(response =>{
+                this.$axios.get('admins/projects/statuses/'+id).then(response =>{
                     return resolve(response);
                 }).catch(error =>{
                     return reject(error);
@@ -40,7 +40,7 @@ export const Stores_Project_Statuses = defineStore('project_statuses',{
         },
         Edit(params){
             return new Promise((resolve, reject) => {
-                axios.put('admins/projects/statuses/'+params.id,params).then(response =>{
+                this.$axios.put('admins/projects/statuses/'+params.id,params).then(response =>{
                     return resolve(response);
                 }).catch(error =>{
                     return reject(error);
@@ -50,7 +50,7 @@ export const Stores_Project_Statuses = defineStore('project_statuses',{
 
         Delete(id){
             return new Promise((resolve, reject) => {
-                axios.delete('admins/projects/statuses/'+id).then(response =>{
+                this.$axios.delete('admins/projects/statuses/'+id).then(response =>{
                     return resolve(response);
                 }).catch(error =>{
                     return reject(error);

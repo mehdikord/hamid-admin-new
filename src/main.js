@@ -37,6 +37,7 @@ import { defaultLocale, localeOptions } from './constants/config';
 import Toast, {POSITION, useToast} from "vue-toastification";
 import "vue-toastification/dist/index.css";
 import "@/assets/css/fonts/font.css"
+import DatePicker from '@alireza-ab/vue3-persian-datepicker';
 // import the styles
 
 //Mixins
@@ -51,6 +52,7 @@ import MTable from "@/components/data/table/MTable.vue";
 import Activation from "@/components/actions/Activation.vue";
 import Global_Loading_Circle from "@/components/globals/Global_Loading_Circle.vue";
 import Delete_Action from "@/components/actions/Delete_Action.vue";
+import Global_Data_Badges_Color from "@/components/data/badges/Global_Data_Badges_Color.vue";
 
 
 const app = createApp(App);
@@ -71,6 +73,7 @@ app.component('validation_errors',Global_Validation_Errors)
 app.component('loading_circle',Global_Loading_Circle)
 app.component('action_activation',Activation)
 app.component('action_delete',Delete_Action)
+app.component('badges_color',Global_Data_Badges_Color)
 app.component("vue3-star-ratings", vue3StarRatings)
 app.component("settingPage", settingPage)
 app.component("b-card", bcard)
@@ -78,6 +81,7 @@ app.component('multiselect', Multiselect)
 app.component(VueFeather.name, VueFeather)
 app.component('Breadcrumbs', Breadcrumbs)
 app.component('MTable',MTable)
+app.component('date-picker',DatePicker)
 
 
 app.use(Toast)

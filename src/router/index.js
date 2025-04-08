@@ -7,6 +7,8 @@ import Dashboard from '@/router/routes/dashboard';
 import Auth from '@/router/routes/auth';
 import Users from '@/router/routes/users';
 import Projects_Categories from '@/router/routes/projects/project_categories'
+import Projects_Statuses from '@/router/routes/projects/project_statuses'
+import Projects from '@/router/routes/projects/projects'
 
 
 
@@ -18,7 +20,9 @@ const routes = [
         children: [
             ...Dashboard,
             ...Users,
-            ...Projects_Categories
+            ...Projects_Categories,
+            ...Projects_Statuses,
+            ...Projects,
         ]
       },
 
